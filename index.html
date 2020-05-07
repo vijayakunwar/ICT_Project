@@ -1,76 +1,345 @@
-
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Cover Template · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/cover/">
+    <link rel="stylesheet" type="text/css" href="custom-css/css-style-index.css">
 
-    <!-- Bootstrap core CSS -->
-      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
-        
+    <!-- Bootstrap CSS -->
+   <!--  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" > -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
+    
+    <!-- cdn for fontawesome icons -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- cdn for fontawesome icons
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+   -->
+   
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <title>EatFruit.com.au</title>
   </head>
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Cover</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <body>
 
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-    </p>
-  </main>
-
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <div class="contact-at-top " >
+      <span class="top-icon" ><i class="fa fa-envelope fa-lg">admin@eatfruit.com</i></span>
+     
+      <span class="top-icon" > <i class="fa fa-phone fa-lg">0414040287</i> </span>
     </div>
-  </footer>
-</div>
-</body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+        <span><h5>EatFruit</h5></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <!-- mx-auto = for center display, ml-auto = for left , mr-auto for right -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><span class="menu-text">Home</span> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="menu-text">How it works</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="menu-text">Products</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="menu-text">Delivery</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="menu-text">About</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="menu-text">Contacts</span></a>
+          </li>
+
+        </ul>
+
+                  
+        <!-- for cart button, icon and drop dwon -->
+        <ul class="nav navbar-nav navbar-right">
+
+          <!-- schopping cart button -->
+          <div   >
+            <li class="dropdown custom-pad-li-5">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"> <i class="fa fa-shopping-cart fa-2x"></i></span>
+                   4 <span class="caret"></span>
+                      
+              </button>
+              
+              <ul class="dropdown-menu dropdown-cart" role="menu">
+                  <li>
+                          <span class="item">
+                            <span class="item-left">
+                                <img src="http://lorempixel.com/50/50/" alt="" />
+                                <span class="item-info">
+                                    <span>Item name</span>
+                                    <span>23$</span>
+                                </span>
+                            </span>
+                            <span class="item-right">
+                                <button class="btn btn-xs btn-danger pull-right">x</button>
+                            </span>
+                        </span>
+                      </li>
+
+                      <li>
+                          <span class="item">
+                            <span class="item-left">
+                                <img src="http://lorempixel.com/50/50/" alt="" />
+                                <span class="item-info">
+                                    <span>Item name</span>
+                                    <span>23$</span>
+                                </span>
+                            </span>
+                            <span class="item-right">
+                                <button class="btn btn-xs btn-danger pull-right">x</button>
+                            </span>
+                        </span>
+                      </li>
+                
+              </ul>
+            </li>
+          </div>
+
+        </ul>
+
+          
+
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div class="btn-group">
+        <button class="btn btn-outline-success my-2 my-sm-0 custom-pad-btn" type="submit">Login</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Signup</button>
+        </div>
+      </form>
+
+    
+    </nav>
+
+    <div class="container-fluid">
+      <!-- jumbotron-->
+      <div class="jumbotron ">
+
+        
+        <!-- make child div content to the centerered vertically allignemnt-->
+        <!-- row align-items-center justify-content-center--->
+          <div class="row-fluid row align-items-center justify-content-center">
+            <div class=" cell col-lg-5 col-sm-12">
+              <h1 class="display-4">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+          
+            <div class=" cell col-lg-5 col-sm-12">
+              <h1 class="display-4">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+          </div>
+            
+        
+          
+      </div>
+
+    </div>
+
+    
+
+    <div class="container-fluid  ">
+      
+        
+        <!-- make child div content to the centered vertically alligned-->
+        <!-- row align-items-center justify-content-center--->
+          <div class="row-fluid  row align-items-center justify-content-center">
+            <div class=" cell col-sm-12 col-md-5 col-lg-5 " style="background-color:yellow;"> 
+              <h1 class="display-4">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          
+            </div>
+          
+            <div class=" cell col-sm-12 col-md-5 col-lg-5 " style="background-color:yellow;"> 
+              <h1 class="display-4">Hello, world!</h1>
+                  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <hr class="my-4">
+                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              
+            </div>
+
+            <div class=" cell col-sm-12 col-md-5 col-lg-5" style="background-color:yellow;"> 
+              <h1 class="display-4">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          
+            </div>
+          
+            <div class=" cell col-sm-12 col-md-5 col-lg-5 " style="background-color:yellow;"> 
+              <h1 class="display-4">Hello, world!</h1>
+                  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <hr class="my-4">
+                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              
+            </div>
+          </div>
+      
+    </div> 
+
+    
+
+
+
+
+
+       <!-- Footer -->
+    <footer class="page-footer  pt-4" >
+
+      <!-- Footer Links -->
+      <div class="container-fluid  ">
+    
+        <!-- Grid row -->
+        <div class="row  text-center">
+    
+          
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+    
+            <!-- Links -->
+            <h5 class="text-uppercase text-lg-left">Sitemap</h5>
+    
+            <ul class="list-unstyled text-lg-left">
+              <li>
+                <a href="#!">How it workd</a>
+              </li>
+              <li>
+                <a href="#!">Products</a>
+              </li>
+              <li>
+                <a href="#!">Delivery</a>
+              </li>
+              
+              <li>
+                  <a href="#!">Cart</a>
+              </li>
+               <li>
+                  <a href="#!">Signup</a>
+              </li>
+              
+            </ul>
+    
+          </div>
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+    
+            <!-- Links -->
+            <h5 class="text-uppercase text-lg-left">About Us</h5>
+    
+            <ul class="list-unstyled text-lg-left">
+              <li>
+                <a href="#!">We Deliver Fresh</a>
+              </li>
+              <li>
+                <a href="#!">Austrlain grown</a>
+              </li>
+              <li>
+                <a href="#!">Farmer Friends</a>
+              </li>
+              
+              <li>
+                  <a href="#!">Delivered to Brisbane Area</a>
+              </li>
+               
+              
+            </ul>
+    
+          </div>
+
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+    
+            <!-- Links -->
+            <h5 class="text-uppercase  text-lg-center"> Our Location  </h5>
+            
+            
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120057.53530989808!2d152.98119015581455!3d-27.43107326344966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9159b3f39ffba7%3A0xa4bf433e794ba2bb!2s421%20Sandgate%20Rd%2C%20Albion%20QLD%204010!5e0!3m2!1sen!2sau!4v1588846498063!5m2!1sen!2sau" width="600" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+          </div>
+
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <!-- Grid column -->
+          <div class="col-md-3 mt-md-0 mt-3">
+    
+            <!-- Content -->
+            <h5 class="text-uppercase text-lg-right">contact us</h5>
+            <ul class="list-unstyled text-lg-right">
+            
+              Message us :
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">contact us</button>
+              <br>
+              <span ><i class="fa fa-envelope fa-lg  "></i> admin@eatfruit.com</span>
+              <br>       
+              <span > <i class="fa fa-phone fa-lg"></i> 0414040287 </span>
+            </p>
+            <img class="mb-2" src="icon/icon_fb.png" alt="" width="24" height="24">
+            <img class="mb-2" src="icon/icon_tw.png" alt="" width="24" height="24">
+            <img class="mb-2" src="icon/icon_yt.png" alt="" width="24" height="24">
+             </ul>
+          </div>
+            
+        </div>
+        <!-- Grid row -->
+    
+      </div>
+      
+    
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">  2020 &copy;
+        <a href="index.html"> EatFruit.com.au</a>
+      </div>
+     
+  
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+   
+
+
+  </body>
 </html>
+

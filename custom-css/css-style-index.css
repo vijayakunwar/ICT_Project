@@ -1,0 +1,58 @@
+
+/*======================= HEADER ===================================================*/
+.contact-at-top {
+    
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.top-icon{
+	padding: 10px;
+}
+
+.custom-pad-li-5{
+	padding: 5px;
+}
+
+
+
+.nav-item{
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+.menu-text:hover{
+	background-color: #000;
+	color: #fff;
+}
+/*======================= END HEADER ===================================================*/
+
+
+
+/* =============================FOOTER=================================================*/
+footer{
+	background-color: #000;
+	color: #fff;
+}
+
+
+/*----------------------------END FOOTER---------------------------------------------------------*/
+.cell{
+	
+	
+	display: inline-block;
+	border-style: solid;
+	text-align: center;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	
+
+
+}
+
+
+
+
