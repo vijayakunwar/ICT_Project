@@ -1,11 +1,17 @@
 
 /*======================= HEADER ===================================================*/
-.contact-at-top {
+.contact-at-top  {
     
     display: flex;
-  align-items: center;
-  justify-content: center;
+  	align-items: center;
+  	justify-content: center;
+  	
   
+}
+
+.contact-at-top, .contact-at-top a{
+	color: #0056B3;
+	text-decoration: none;
 }
 
 .top-icon{
@@ -36,12 +42,26 @@ footer{
 	color: #fff;
 }
 
+/* Jumbotron ======================================================*/
+.jumbotron{
+ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(../images/jumbotron/jumbo1.jpg); 
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ text-align: center;
+ font-weight: bold;
+ color: #fff;
+ text-transform: uppercase;
+
+}
+
 
 /*----------------------------END FOOTER---------------------------------------------------------*/
+
 .cell{
 	
 	
-	display: inline-block; /* if not use makes cell item of different size */
+	display: inline-block; 
 	
 	text-align: center;
 	margin: 10px 10px 10px 10px;
@@ -51,6 +71,7 @@ footer{
 	
 
 }
+
 
 .category-display-1{
 	
@@ -87,9 +108,13 @@ footer{
 
 }
 
+/*¤¤¤¤¤¤¤¤¤ not working ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ */
 /* makes card image responsive with equal height */
+
+/*------------
  .embed-responsive .card-img-top {
     object-fit: cover;
     width: 100%;
     height: 40vh;
 }
+------------*/
