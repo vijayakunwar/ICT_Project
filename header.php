@@ -77,8 +77,8 @@
           <!-- schopping cart button -->
           <div   >
             <li class="dropdown ">
-              <button id="nav-cart-button" type="button" class="btn btn-danger dropdown-toggle mr-sm-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"> <i class="fa fa-shopping-cart fa-2x"></i></span>
+              <button  type="button" class="btn btn-danger dropdown-toggle mr-sm-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret mr-sm-2"> <i class="fa fa-shopping-cart fa-2x"></i></span>
                    4 <span class="caret"></span>
                       
               </button>

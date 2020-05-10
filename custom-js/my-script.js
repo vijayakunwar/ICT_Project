@@ -1,6 +1,4 @@
-document.getElementById("nav-cart-button").onclick = function () {
-      location.href = "cart.php";
-  };
+
 
   document.getElementById("login").onclick= function(){
     location.href = "login.php";
