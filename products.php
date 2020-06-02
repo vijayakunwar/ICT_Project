@@ -65,9 +65,12 @@
     <div class="cell col-sm-6 col-md-4 col-lg-3">
       <div class="card  embed-responsive-16by9">
         
-        <img class="card-img-top embed-responsive-item" 
+        <a href="product-detail.php?pid=<?php echo htmlentities($row1['product_ID']);?>">
+          <img class="card-img-top embed-responsive-item" 
         src="images/product/<?php echo htmlentities($row1['product_image'])?>" 
         alt="Card image cap">
+
+        </a>
         <div class="card-body">
           <h5 class="card-title"><?php echo htmlentities($row1['product_title'])?> </h5>
           <h5 class="card-title"> <span>$<?php echo htmlentities($row1['product_price'])?>.00</span></h5>
