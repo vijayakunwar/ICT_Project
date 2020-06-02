@@ -1,4 +1,17 @@
 <?php include('header.php'); ?>
+<?php include('db/db_connection.php'); ?>
+
+
+<?php 
+    
+    function h($string="") {
+    return htmlspecialchars($string);
+    }
+    //make the database connection
+    $conn = db_connect();
+?>
+
+
 
 <div class="container-fluid">
   <div class="jumbotron">
@@ -16,55 +29,60 @@
 </div>
 
 
+
+<?php
+
+    $sql1 = "SELECT * from product where product_type= 1 ";
+    $sql2 = "SELECT * from product where product_type= 2 ";
+    $sql3 = "SELECT * from product where product_type= 3 ";
+
+    $result1 = mysqli_query($conn, $sql1);
+    $result2 = mysqli_query($conn, $sql2);
+    $result3 = mysqli_query($conn, $sql3);
+   // $datas = array(); //emplty array to store query result
+    //print_r($result);
+
+?>
+
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 <dir class="conainter feature-text">
   <h1>Fruit Boxes</h1>
   
 </dir>
 
+
+
 <div class="container-fluid">
   <div class="row-fluid row align-items-center justify-content-center">
 
+    <?php 
+
+      while($row1 = mysqli_fetch_assoc($result1)) { 
+
+    ?> 
+
+
     <div class="cell col-sm-6 col-md-4 col-lg-3">
       <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/fruit_box_small.jpg" alt="Card image cap">
+        
+        <img class="card-img-top embed-responsive-item" 
+        src="images/product/<?php echo htmlentities($row1['product_image'])?>" 
+        alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Fruit Box Small </h5>
-          <h5 class="card-title"> <span>$30.00</span></h5>
-          <p class="card-text">Small Fruit Box fulfilled by local farmer. </p>
+          <h5 class="card-title"><?php echo htmlentities($row1['product_title'])?> </h5>
+          <h5 class="card-title"> <span>$<?php echo htmlentities($row1['product_price'])?>.00</span></h5>
+          <p class="card-text"><?php echo htmlentities($row1['product_description'])?> </p>
           <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
     </div> 
 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <div class="card embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/fruit-gift-box.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Fruit Gift Box </span></h5>
-          <h5 class="card-title"> <span>$50.00</span></h5>
-          <p class="card-text">Fruit Gift Box fulfilled by local farmer.</p>
-
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div> 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <!-- <div class="card embed-responsive embed-responsive-16by9"> -->
-      <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/workplace-fruit-box.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Workplace Fruit Box</h5>
-          <h5 class="card-title"> <span>$70.00</span></h5>
-          <p class="card-text">Workplace Fruit Box fulfilled by local farmer </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-
+    <?php } ?>
   </div>
 </div>
 
 <hr>
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 
 <dir class="conainter feature-text">
   <h1>Vegetable Boxes</h1>
@@ -74,46 +92,36 @@
 <div class="container-fluid">
   <div class="row-fluid row align-items-center justify-content-center">
 
+    <?php 
+      $sql2 = "SELECT * from product where product_type= 2 ";
+      $result2 = mysqli_query($conn, $sql2);
+      // $datas = array(); //emplty array to store query result
+      //print_r($result);
+      while($row2 = mysqli_fetch_assoc($result2)) { 
+
+    ?> 
     <div class="cell col-sm-6 col-md-4 col-lg-3">
       <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/veg_35_small.jpg" alt="Card image cap">
+        
+        <img class="card-img-top embed-responsive-item" 
+        src="images/product/<?php echo htmlentities($row2['product_image'])?>" 
+        alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Vegetable Box Small </h5>
-          <h5 class="card-title"> <span>$35.00</span></h5>
-          <p class="card-text">Small Vegetable Box fulfilled by local farmer. </p>
+          <h5 class="card-title"><?php echo htmlentities($row2['product_title'])?> </h5>
+          <h5 class="card-title"> <span>$<?php echo htmlentities($row2['product_price'])?>.00</span></h5>
+          <p class="card-text"><?php echo htmlentities($row2['product_description'])?> </p>
           <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
     </div> 
 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <div class="card embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/veg_50_medium.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Vegetable Box Medium</span></h5>
-          <h5 class="card-title"> <span>$50.00</span></h5>
-          <p class="card-text">Vegetable Box fulfilled by local farmer.</p>
-
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div> 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <!-- <div class="card embed-responsive embed-responsive-16by9"> -->
-      <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/veg_70_large.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Vegetable Box Large</h5>
-          <h5 class="card-title"> <span>$70.00</span></h5>
-          <p class="card-text">Vegetable Box fulfilled by local farmer </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-
+    <?php }  ?>
   </div>
 </div>
+
 <hr>
+
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 <dir class="conainter feature-text">
   <h1>Custmized Fruit and Vegetable Boxes</h1>
   
@@ -122,45 +130,39 @@
 <div class="container-fluid">
   <div class="row-fluid row align-items-center justify-content-center">
 
+    <?php 
+
+      while($row3 = mysqli_fetch_assoc($result3)) { 
+
+    ?> 
+
+
     <div class="cell col-sm-6 col-md-4 col-lg-3">
       <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/salad-fruit-box.jpg" alt="Card image cap">
+        
+        <img class="card-img-top embed-responsive-item" 
+        src="images/product/<?php echo htmlentities($row3['product_image'])?>" 
+        alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Salad and Fruit Box Small </h5>
-          <h5 class="card-title"> <span>$30.00</span></h5>
-          <p class="card-text"> Choosr items for Salad and Fruit Box. Products are fulfilled by local farmer. </p>
-          <a href="#" class="btn btn-primary">Contact Us</a>
+          <h5 class="card-title"><?php echo htmlentities($row3['product_title'])?> </h5>
+          <h5 class="card-title"> <span>$<?php echo htmlentities($row3['product_price'])?>.00</span></h5>
+          <p class="card-text"><?php echo htmlentities($row3['product_description'])?> </p>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
     </div> 
 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <div class="card embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/veg_50_custom.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Vegetable Box Medium</span></h5>
-          <h5 class="card-title"> <span>$50.00</span></h5>
-          <p class="card-text">Choose your vegetables. Products are fulfilled by local farmer.</p>
-
-          <a href="#" class="btn btn-primary">Contact Us</a>
-        </div>
-      </div>
-    </div> 
-    <div class="cell col-sm-6 col-md-4 col-lg-3">
-      <!-- <div class="card embed-responsive embed-responsive-16by9"> -->
-      <div class="card  embed-responsive-16by9">
-        <img class="card-img-top embed-responsive-item" src="images/product/fruit_70_custom.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Fruit Box Large</h5>
-          <h5 class="card-title"> <span>$70.00</span></h5>
-          <p class="card-text">Choose your Fruits. Products are fulfilled by local farmer </p>
-          <a href="#" class="btn btn-primary">Contact Us</a>
-        </div>
-      </div>
-    </div>
+    <?php }
+                
+      
+    ?>
+    
 
   </div>
 </div>
 
+<hr>
+
+<?php  mysqli_close($conn); ?>
 
 <?php include('footer.php'); ?>
