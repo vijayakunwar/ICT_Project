@@ -9,6 +9,8 @@ $con = db_connect();
 
 if(isset($_GET['action']) && $_GET['action']=="add"){
   $id=intval($_GET['id']);
+   header('location:my-cart.php');
+  
   if(isset($_SESSION['cart'][$id])){
     $_SESSION['cart'][$id]['quantity']++;
   }else{

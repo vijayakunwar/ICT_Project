@@ -1,3 +1,4 @@
+
 <?php include('header.php'); ?>
 <?php include('db/db_connection.php'); ?>
 
@@ -75,7 +76,10 @@
           <h5 class="card-title"><?php echo htmlentities($row1['productName'])?> </h5>
           <h5 class="card-title"> <span>$<?php echo htmlentities($row1['productPrice'])?>.00</span></h5>
           <p class="card-text"><?php echo htmlentities($row1['productDescription'])?> </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+         
+
+          <a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a>
+
         </div>
       </div>
     </div> 

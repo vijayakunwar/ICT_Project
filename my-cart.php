@@ -94,7 +94,7 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 		<!-- ============================================== HEADER ============================================== -->
 
 <?php include('header.php');?>
-<?php include('includes/main-header.php');?>
+
 
 
 <!-- ============================================== HEADER : END ============================================== -->
