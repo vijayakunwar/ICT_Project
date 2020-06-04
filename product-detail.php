@@ -1,68 +1,187 @@
 
-<?php include('header.php'); ?>
-<?php include('db/db_connection.php'); ?>
-<h1>
-	<?php
-		echo $_GET['pid'];
-	?>
-</h1>
-
-<?php 
-	$product_id = $_GET['pid'];
-    //make the database connection
-    $conn = db_connect();
-
-?>
 <?php
+session_start();
+error_reporting(0);
 
-    $sql = "SELECT * from product where product_ID= '$product_id'";
-    
+echo session_id();
+include('db/db_connection.php'); 
+$con = db_connect();
 
-    $result = mysqli_query($conn, $sql);
-    
-   // $datas = array(); //emplty array to store query result
-    //print_r($result);
+if(isset($_GET['action']) && $_GET['action']=="add"){
+  $id=intval($_GET['id']);
+  if(isset($_SESSION['cart'][$id])){
+    $_SESSION['cart'][$id]['quantity']++;
+  }else{
+    $sql_p="SELECT * FROM products WHERE id={$id}";
+    $query_p=mysqli_query($con,$sql_p);
+    if(mysqli_num_rows($query_p)!=0){
+      $row_p=mysqli_fetch_array($query_p);
+      $_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
+      header('location:my-cart.php');
+    }else{
+      $message="Product ID is invalid";
+    }
+  }
+}
+
+$pid=intval($_GET['pid']);
+
 
 ?>
+<?php include('includes/main-header.php'); ?>
 
-<div class="container-fluid">
-  <div class="row-fluid row align-items-center justify-content-center">
+<?php include('header.php'); ?>
 
-<?php 
 
-      while($row = mysqli_fetch_assoc($result)) { 
 
-    ?> 
-	<dir class="conainter feature-text">
-	  <h1><?php echo htmlentities($row['product_title']);?></h1>
-	  <h2><?php echo htmlentities($row['product_description']);?></h3>
-	  
-	</dir>
 
- <!--   <div class="cell col-sm-6 col-md-4 col-lg-3"> -->
- 	<div class="cell col-sm-8 col-md-6 col-lg-6">
-      <div class="card  embed-responsive-16by9">
-        
-        <a href="product-detail.php?pid=<?php echo htmlentities($row['product_ID']);?>">
-          <img class="card-img-top embed-responsive-item" 
-        src="images/product/<?php echo htmlentities($row['product_image'])?>" 
-        alt="Card image cap">
 
-        </a>
-        <div class="card-body">
-          <h5 class="card-title"><?php echo htmlentities($row['product_title'])?> </h5>
-          <h5 class="card-title"> <span>$<?php echo htmlentities($row['product_price'])?>.00</span></h5>
-          <p class="card-text"><?php echo htmlentities($row['product_description'])?> </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div> 
+<!-- ------------------------------------------------------------------------------ -->
 
+
+
+  <div class='container'>
+    
+      
+      <?php 
+      $ret=mysqli_query($con,"select * from products where id='$pid'");
+      while($row=mysqli_fetch_array($ret))
+      {
+
+      ?>
+     
+        <div class="row  ">
+          
+            <div class="single-product-gallery-item" >
+                    
+              <img  src="images/product/<?php echo htmlentities($row['productImage']);?>"  width="450" height="300" alt="">
+              
+            </div>
+
+            <div class='col-sm-6 col-md-7 product-info-block'>
+              <div class="product-info">
+                <h1 class="name"><?php echo htmlentities($row['productName']);?></h1>
+                  <?php $rt=mysqli_query($con,"select * from productreviews where productId='$pid'");
+                  $num=mysqli_num_rows($rt);
+                  {
+                  ?>    
+                
+<?php } ?>
+              <div class="stock-container info-container m-t-10">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="stock-box">
+                      <span class="label">Availability :</span>
+                    </div>  
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="stock-box">
+                      <span class="value"><?php echo htmlentities($row['productAvailability']);?></span>
+                    </div>  
+                  </div>
+                </div><!-- /.row -->  
+              </div>
+
+
+
+              <div class="stock-container info-container m-t-10">
+                <div class="row">
+                  
+                  <div class="col-sm-9">
+                    <div class="stock-box">
+                      <span class="value"><?php echo htmlentities($row['productCompany']);?></span>
+                    </div>  
+                  </div>
+                </div><!-- /.row -->  
+              </div>
+
+
+              <div class="stock-container info-container m-t-10">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="stock-box">
+                      <span class="label">Shipping Charge :</span>
+                    </div>  
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="stock-box">
+                      <span class="value"><?php if($row['shippingCharge']==0)
+                        {
+                          echo "Free";
+                        }
+                        else
+                        {
+                          echo htmlentities($row['shippingCharge']);
+                        }
+
+                        ?>
+                          
+                      </span>
+                    </div>  
+                  </div>
+                </div><!-- /.row -->  
+              </div>
+
+              
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="price-box">
+                      <span class="price">$ <?php echo htmlentities($row['productPrice']);?></span>
+                      
+                    </div>
+                  </div>
+                
+              </div><!-- /.price-container -->
+
+              <div class="quantity-container info-container">
+                <div class="row">
+                  
+                  <div class="col-sm-2">
+                    <span class="label">Qty :</span>
+                  </div>
+                  
+                  <div class="col-sm-2">
+                    
+                                
+                        <input type="text" value="1">
+                      
+                  </div>
+
+                 
+
+                  
+                </div><!-- /.row -->
+                <div class="row">
+                 <div class="col-sm-7">
+                    <a href="product-detail.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+                  </div>
+                  </div>
+              </div><!-- /.quantity-container -->
+
+             
+
+  
+      
+     
+    </div><!-- /.item -->
     <?php } ?>
+  
+    
+</div><!-- /.home-owl-carousel -->
 
-    </div>
+
+
+<!-- ============================================== UPSELL PRODUCTS : END ============================================== -->
+      
 </div>
-    <?php  mysqli_close($conn); ?>
+</div>
+</div>
+
+
+
+
+
+<!---------------------------------------------------------------------------------------->
 
 
 <?php include('footer.php'); ?>
