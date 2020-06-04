@@ -12,21 +12,20 @@ if(isset($_POST['submit'])){
 				$_SESSION['cart'][$key]['quantity']=$val;
 
 			}
-		}
-			echo "<script>alert('Your Cart hasbeen Updated');</script>";
-		}
+		} 
+			
+		}echo "<script>alert('Your Cart hasbeen Updated');</script>";
 	}
 // Code for Remove a Product from Cart
-if(isset($_POST['remove_code']))
-	{
-
-if(!empty($_SESSION['cart'])){
-		foreach($_POST['remove_code'] as $key){
-			
-				unset($_SESSION['cart'][$key]);
+if(isset($_POST['remove_code'])){
+	
+	if(!empty($_SESSION['cart'])){
+			foreach($_POST['remove_code'] as $key){
+				
+					unset($_SESSION['cart'][$key]);
+			}
+				echo "<script>alert('Your Cart has been Updated');</script>";
 		}
-			echo "<script>alert('Your Cart has been Updated');</script>";
-	}
 }
 // code for insert product in order table
 
@@ -93,8 +92,8 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 	
 		<!-- ============================================== HEADER ============================================== -->
 
+<?php include('includes/profile-header.php');?>
 <?php include('header.php');?>
-
 
 
 <!-- ============================================== HEADER : END ============================================== -->
@@ -108,6 +107,8 @@ echo "<script>alert('Shipping Address has been updated');</script>";
 					<div class="table-responsive">
 <form name="cart" method="post">	
 <?php
+
+
 if(!empty($_SESSION['cart'])){
 	?>
 		<table class="table table-bordered">
@@ -332,15 +333,18 @@ while($row=mysqli_fetch_array($query))
 		</tbody><!-- /tbody -->
 	</table>
 	<?php } else {
+
 echo "Your shopping Cart is empty";
+	
+	
 		}?>
 </div>			</div>
 		</div> 
 		</form>
-<?php echo include('includes/brands-slider.php');?>
+
 </div>
 </div>
-<?php include('includes/footer.php');?>
+<?php include('footer.php');?>
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	

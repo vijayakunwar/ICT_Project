@@ -27,8 +27,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 </script>
 
 	
-<?php include('includes/top-header.php');?>
-<?php include('includes/main-header.php');?>
+<?php include('includes/profile-header.php');?>
 <?php include('header.php');?>
 </header>
 <!-- ============================================== HEADER : END ============================================== -->

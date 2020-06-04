@@ -28,11 +28,7 @@
   </head>
   <body>
 
-    <div class="contact-at-top " >
-      <span class="top-icon" ><a href="contact.php"><i class="fa fa-envelope fa-lg">admin@eatfruit.com</i> </a></span>
-     
-      <span class="top-icon" > <i class="fa fa-phone fa-lg">0414040287</i> </span>
-    </div>
+    
 
 
 
@@ -73,76 +69,7 @@
         </ul>
 
                   
-        <!-- for cart button, icon and drop dwon -->
-        <ul class="nav navbar-nav navbar-right">
-
-          <!-- schopping cart button -->
-          <div   >
-            <li class="dropdown ">
-              <button  type="button" class="btn btn-danger dropdown-toggle mr-sm-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret mr-sm-2"> <i class="fa fa-shopping-cart fa-2x"></i></span>
-                   4 <span class="caret"></span>
-                      
-              </button>
-              
-              <ul class="dropdown-menu dropdown-cart" role="menu">
-                  <li>
-                          <span class="item">
-                            <span class="item-left">
-                                <img src="http://lorempixel.com/50/50/" alt="" />
-                                <span class="item-info">
-                                    <span>Item name</span>
-                                    <span>23$</span>
-                                </span>
-                            </span>
-                            <span class="item-right">
-                                <button class="btn btn-xs btn-danger pull-right">x</button>
-                            </span>
-                        </span>
-                      </li>
-
-                      <li>
-                          <span class="item">
-                            <span class="item-left">
-                                <img src="http://lorempixel.com/50/50/" alt="" />
-                                <span class="item-info">
-                                    <span>Item name</span>
-                                    <span>23$</span>
-                                </span>
-                            </span>
-                            <span class="item-right">
-                                <button class="btn btn-xs btn-danger pull-right">x</button>
-                            </span>
-                        </span>
-                      </li>
-                
-              </ul>
-            </li>
-          </div>
-
-        </ul>
-
-          
-
-
-      <form class="form-inline my-2 my-lg-0">
-
-        <!-- Another variation with a button -->
-        <div class="input-group">
-            <input type="text" class="form-control " placeholder="Search products">
-            <div class="input-group-append">
-                <button class="btn btn-success mr-sm-2" type="button" id="search-icon-header">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-        </div>
-      </form>
-
-       <!--     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        -->
-        <div class="btn-group">
-        <button class="btn btn-outline-success my-2 my-sm-0 custom-pad-btn" type="submit" id="login">Login</button>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="signup">Signup</button>
-        </div>
+        
       
     </nav>
+    

@@ -1,6 +1,34 @@
 
-<?php include('header.php'); ?>
-<?php include('db/db_connection.php'); ?>
+<?php
+session_start();
+error_reporting(1);
+
+include('db/db_connection.php'); 
+$con = db_connect();
+
+if(isset($_GET['action']) && $_GET['action']=="add"){
+  $id=intval($_GET['id']);
+   header('location:my-cart.php');
+  
+  if(isset($_SESSION['cart'][$id])){
+    $_SESSION['cart'][$id]['quantity']++;
+  }else{
+    $sql_p="SELECT * FROM products WHERE id={$id}";
+    $query_p=mysqli_query($con,$sql_p);
+    if(mysqli_num_rows($query_p)!=0){
+      $row_p=mysqli_fetch_array($query_p);
+      $_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
+      header('location:my-cart.php');
+    }else{
+      $message="Product ID is invalid";
+    }
+  }
+}
+
+?>
+<?php include('includes/profile-header.php');?>
+<?php include('header.php');?>
+
 
 
 <?php 
@@ -9,7 +37,7 @@
     return htmlspecialchars($string);
     }
     //make the database connection
-    $conn = db_connect();
+    $con = db_connect();
 ?>
 
 
@@ -37,9 +65,9 @@
     $sql2 = "SELECT * from products where productCategory= 2 ";
     $sql3 = "SELECT * from products where productCategory= 3 ";
 
-    $result1 = mysqli_query($conn, $sql1);
-    $result2 = mysqli_query($conn, $sql2);
-    $result3 = mysqli_query($conn, $sql3);
+    $result1 = mysqli_query($con, $sql1);
+    $result2 = mysqli_query($con, $sql2);
+    $result3 = mysqli_query($con, $sql3);
    // $datas = array(); //emplty array to store query result
     //print_r($result);
 
@@ -72,13 +100,19 @@
         alt="Card image cap">
 
         </a>
+
+          <a href="product-detail.php?pid=<?php echo htmlentities($row1['id']);?>" class="btn btn-primary"><i class="fa fa-info-circle "></i> Product Detail</a>
+
+
         <div class="card-body">
           <h5 class="card-title"><?php echo htmlentities($row1['productName'])?> </h5>
           <h5 class="card-title"> <span>$<?php echo htmlentities($row1['productPrice'])?>.00</span></h5>
           <p class="card-text"><?php echo htmlentities($row1['productDescription'])?> </p>
          
 
-          <a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a>
+
+          <a href="product-detail.php?page=product&action=add&id=<?php echo $row1['id']; ?>" class="btn btn-danger"><i class="fa fa-shopping-cart "></i> ADD TO CART</a>
+          
 
         </div>
       </div>
@@ -114,11 +148,13 @@
         src="images/product/<?php echo htmlentities($row2['productImage'])?>" 
         alt="Card image cap">
         </a>
+        <a href="product-detail.php?pid=<?php echo htmlentities($row2['id']);?>" class="btn btn-primary"><i class="fa fa-info-circle "></i> Product Detail</a>
+
         <div class="card-body">
           <h5 class="card-title"><?php echo htmlentities($row2['productName'])?> </h5>
           <h5 class="card-title"> <span>$<?php echo htmlentities($row2['productPrice'])?>.00</span></h5>
           <p class="card-text"><?php echo htmlentities($row2['productDescription'])?> </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <a href="product-detail.php?page=product&action=add&id=<?php echo $row2['id']; ?>" class="btn btn-danger"><i class="fa fa-shopping-cart "></i> ADD TO CART</a>
         </div>
       </div>
     </div> 
@@ -153,11 +189,19 @@
         src="images/product/<?php echo htmlentities($row3['productImage'])?>" 
         alt="Card image cap">
         </a>
+
+        <a href="product-detail.php?pid=<?php echo htmlentities($row3['id']);?>" class="btn btn-primary"><i class="fa fa-info-circle "></i> Product Detail</a>
+
         <div class="card-body">
           <h5 class="card-title"><?php echo htmlentities($row3['productName'])?> </h5>
           <h5 class="card-title"> <span>$<?php echo htmlentities($row3['productPrice'])?>.00</span></h5>
           <p class="card-text"><?php echo htmlentities($row3['productDescription'])?> </p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+          
+
+
+          <a href="product-detail.php?page=product&action=add&id=<?php echo $row3['id']; ?>" class="btn btn-danger"><i class="fa fa-shopping-cart "></i> ADD TO CART</a>
+
+          
         </div>
       </div>
     </div> 
@@ -173,6 +217,6 @@
 
 <hr>
 
-<?php  mysqli_close($conn); ?>
+<?php  mysqli_close($con); ?>
 
 <?php include('footer.php'); ?>

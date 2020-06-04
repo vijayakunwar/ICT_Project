@@ -28,7 +28,10 @@ $query=mysqli_query($con,"SELECT * FROM users WHERE email='$email' and password=
 $num=mysqli_fetch_array($query);
 if($num>0)
 {
-$extra="my-cart.php";
+//$extra="my-cart.php";
+
+$extra="index.php";   // takes to the index page after login sucessful
+
 $_SESSION['login']=$_POST['email'];
 $_SESSION['id']=$num['id'];
 $_SESSION['username']=$num['name'];
@@ -90,24 +93,10 @@ error:function (){}
 
 
 
-	</head>
-    <body class="cnt-home">
+<?php include('includes/profile-header.php');?>
 	
-		
-	
-		<!-- ============================================== HEADER ============================================== -->
-
-
-	<!-- ============================================== TOP MENU ============================================== -->
-
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
 <?php include('header.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
 
-</header>
-
-<!-- ============================================== HEADER : END ============================================== -->
 
 
 <div class="body-content outer-top-bd">
@@ -116,8 +105,8 @@ error:function (){}
 			<div class="row">
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
-	<h4 class="">sign in</h4>
-	<p class="">Hello, Welcome to your account.</p>
+	<h4 class="">Sign in</h4>
+	
 	<form class="register-form outer-top-xs" method="post">
 	<span style="color:red;" >
 <?php
@@ -136,7 +125,7 @@ echo htmlentities($_SESSION['errmsg']="");
 		 <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
 		</div>
 		<div class="radio outer-xs">
-		  	<a href="forgot-password.php" class="forgot-password pull-right">Forgot your Password?</a>
+		  	<a href="#" class="forgot-password pull-right">Forgot your Password?</a>
 		</div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="login">Login</button>
 	</form>					
@@ -145,8 +134,8 @@ echo htmlentities($_SESSION['errmsg']="");
 
 <!-- create a new account -->
 <div class="col-md-6 col-sm-6 create-new-account">
-	<h4 class="checkout-subtitle">create a new account</h4>
-	<p class="text title-tag-line">Create your own Shopping account.</p>
+	<h4 class="checkout-subtitle">Register to get account</h4>
+	
 	<form class="register-form outer-top-xs" role="form" method="post" name="register" onSubmit="return valid();">
 <div class="form-group">
 	    	<label class="info-title" for="fullname">Full Name <span>*</span></label>
@@ -178,43 +167,14 @@ echo htmlentities($_SESSION['errmsg']="");
 
 	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button" id="submit">Sign Up</button>
 	</form>
-	<span class="checkout-subtitle outer-top-xs">Sign Up Today And You'll Be Able To :  </span>
-	<div class="checkbox">
-	  	<label class="checkbox">
-		  	Speed your way through the checkout.
-		</label>
-		<label class="checkbox">
-		Track your orders easily.
-		</label>
-		<label class="checkbox">
- Keep a record of all your purchases.
-		</label>
-	</div>
+
 </div>	
 <!-- create a new account -->			</div><!-- /.row -->
 		</div>
 </div>
 </div>
 <?php include('footer.php');?>
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
 	
-	<script src="assets/js/bootstrap.min.js"></script>
-	
-	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	
-	<script src="assets/js/echo.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-	<script src="assets/js/bootstrap-slider.min.js"></script>
-    <script src="assets/js/jquery.rateit.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
-
-	<!-- For demo purposes – can be removed on production -->
-	
-	<script src="switchstylesheet/switchstylesheet.js"></script>
 	
 	<script>
 		$(document).ready(function(){ 
