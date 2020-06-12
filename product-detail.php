@@ -9,9 +9,7 @@ $con = db_connect();
 
 if(isset($_GET['action']) && $_GET['action']=="add"){
   $id=intval($_GET['id']);
-  
-
-  
+   
   if(isset($_SESSION['cart'][$id])){
     $_SESSION['cart'][$id]['quantity']++;
 
@@ -51,7 +49,10 @@ $pid=intval($_GET['pid']);
 
 
 <!-- ------------------------------------------------------------------------------ -->
-
+<dir class="conainter feature-text">
+  <h1>Product Detail</h1>
+  
+</dir>
 
 
   <div class='container-fluid'>
@@ -89,7 +90,7 @@ $pid=intval($_GET['pid']);
                 <span class="value"><?php echo htmlentities($row['productAvailability']);?></span>
             </li>
             <li class="list-group-item">
-                
+                <span class="label">Delivery charge :</span> 
                 <span class="value"><?php if($row['shippingCharge']==0)
                         {
                           echo "Free";

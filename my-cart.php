@@ -162,7 +162,7 @@ if(!empty($_SESSION['cart'])){
 					<td class="romove-item"><input type="checkbox" name="remove_code[]" value="<?php echo htmlentities($row['id']);?>" /></td>
 					<td class="cart-image">
 						<a class="entry-thumbnail" href="#">
-						    <img src="images/product/<?php echo $row['productImage'];?>" alt="" width="114" height="146">
+						    <img src="images/product/<?php echo $row['productImage'];?>" alt="" width="120" height="80">
 						</a>
 					</td>
 					<td class="cart-product-name-info">
@@ -206,7 +206,9 @@ $_SESSION['pid']=$pdtid;
 		</table><!-- /table -->
 		
 	</div>
-</div><!-- /.shopping-cart-table -->			<div class="col-md-4 col-sm-12 estimate-ship-tax">
+</div><!-- /.shopping-cart-table -->			
+
+<div class="col-lg-12 col-md-4 col-sm-12 estimate-ship-tax">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -258,7 +260,7 @@ while($row=mysqli_fetch_array($query))
 	</table><!-- /table -->
 </div>
 
-<div class="col-md-4 col-sm-12 estimate-ship-tax">
+<div class=" col-lg-12 col-md-4 col-sm-12 estimate-ship-tax">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -309,7 +311,7 @@ while($row=mysqli_fetch_array($query))
 		</tbody><!-- /tbody -->
 	</table><!-- /table -->
 </div>
-<div class="col-md-4 col-sm-12 cart-shopping-total">
+<div class="col-lg-12 col-md-4 col-sm-12 cart-shopping-total">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
